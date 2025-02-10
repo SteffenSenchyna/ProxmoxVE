@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -s https://raw.githubusercontent.com/SteffenSenchyna/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: kristocopani
 # License: MIT
@@ -42,8 +42,8 @@ function update_script() {
 
     msg_info "Updating ${APP} to v${RELEASE}"
     cd /opt
-    wget -q https://github.com/semaphoreui/semaphore/releases/download/v${RELEASE}/semaphorepro_${RELEASE}_linux_amd64.deb
-    dpkg -i semaphorepro_${RELEASE}_linux_amd64.deb &>/dev/null
+    wget -q https://www.semaphoreui.com/uploads/v"${RELEASE}"/fac3e82d-94ca-4294-9a42-86178c4dc1aa/semaphorepro_"${RELEASE}"_linux_amd64.deb
+    dpkg -i semaphorepro_"${RELEASE}"_linux_amd64.deb &>/dev/null
     echo "${RELEASE}" >"/opt/${APP}_version.txt"
     msg_ok "Updated ${APP} to v${RELEASE}"
 
